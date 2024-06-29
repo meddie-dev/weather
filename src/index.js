@@ -1,3 +1,4 @@
+import hero_pic from './assets/weather_status/weather_sunny.svg'
 
 const apiKey = 'd7fc45f4b3c1ebdd5ada6afd67936c4f'
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
@@ -80,7 +81,7 @@ export async function getWeather(city) {
 
 
     if (data.weather[0].main == 'Clouds') {
-      weatherIcon.src = './src/assets/weather_status/weather_clouds.svg'
+      weatherIcon.src = hero_pic
       weatherBg.src = './src/assets/weather_bg/wbg_clouds.jpg'
       body.style.backgroundColor = '#c6d7de';
       days1_status.src = './src/assets/days_status/days_clouds.svg'

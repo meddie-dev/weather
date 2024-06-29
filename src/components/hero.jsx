@@ -1,4 +1,4 @@
-
+import hero_pic from '../src/assets/weather_status/weather_sunny.svg'
 export function Hero() {
   
     return (
@@ -6,7 +6,7 @@ export function Hero() {
             <div className=" relative z-20 max-w-[90%] grid grid-cols-2 mx-auto p-4 rounded-[1rem] shadow-lg shadow-gray-400 overflow-hidden text-white">
                 <div className='relative z-20 p-4 col-span-1' >
                     <div>
-                        <img id="weather_status" src="./src/assets/weather_status/weather_sunny.svg" className='w-16 filter invert'  alt="" />
+                        <img id="weather_status" src={hero_pic} className='w-16 filter invert'  alt="" />
                     </div>
                     <h1 id="weather_temp" className="text-[6rem] mt-[-2rem] ml-2 ">
                         23
