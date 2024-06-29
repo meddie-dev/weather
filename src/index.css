@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+    --baseColor: #0EA5E9;
+    --bodyColor: #eef1fe;
+    --boxColor: #f9f9fe;
+    --borderColor: #98a4ff;
+}
+
+body {
+    background-color: var(--bodyColor);
+    font-family: 'Work Sans', sans-serif;
+}
+
+#search {
+    width: 100%;
+    padding: 7px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+
+
+
+
