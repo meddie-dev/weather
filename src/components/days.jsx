@@ -48,7 +48,7 @@ export default function Days() {
                                 <div>
                                     <img id="days3_status" src="./src/assets/days_status/days_sunny.svg" className='w-10' alt="" />
                                 </div>
-                                <h1 id="days3_temp" className="text-[2rem] mt-[-15px] ml-2 ">
+                                <h1 id="days3_temp" className="text-[2rem] mt-[-8px] ml-2 ">
                                     23°
                                 </h1>
                                 <p id="days3_location" className='text-md ml-2'>

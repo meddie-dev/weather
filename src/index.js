@@ -4,12 +4,29 @@ const apiKey = 'd7fc45f4b3c1ebdd5ada6afd67936c4f'
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const apiFore = 'api.openweathermap.org/data/2.5/forecast?lat=';
 
+// Imgages for weatherStatus
+import weatherClouds from '../src/assets/weather_status/weather_clouds.svg'
+import weatherRain from '../src/assets/weather_status/weather_rain.svg'
+import weatherClear from '../src/assets/weather_status/weather_sunny.svg'
+import weatherDrizzle from '../src/assets/weather_status/weather_drizzle.svg'
+import weatherMist from '../src/assets/weather_status/weather_mist.svg'
+
 // Imgages for weatherBg
 import wbgClouds from '../src/assets/weather_bg/wbg_clouds.jpg'
 import wbgRain from '../src/assets/weather_bg/wbg_rain.avif'
 import wbgClear from '../src/assets/weather_bg/wbg_sunny.jpg'
 import wbgdrizzle from '../src/assets/weather_bg/wbg_drizzle.avif'
 import wbgMist from '../src/assets/weather_bg/wbg_mist.avif'
+
+// Imgages for dayStatus
+import dayClouds from '../src/assets/days_status/days_clouds.svg'
+import dayRain from '../src/assets/days_status/days_rain.svg'
+import dayClear from '../src/assets/days_status/days_sunny.svg'
+import dayDrizzle from '../src/assets/days_status/days_drizzle.svg'
+import dayMist from '../src/assets/days_status/days_mist.svg'
+
+
+
 
 
 function formatTimezone(offset) {
@@ -70,7 +87,7 @@ export async function getWeather(city) {
     document.querySelector('#days1_location').innerHTML = data.name
     document.querySelector('#days1_timezone').innerHTML = formatTimezone(data.timezone);
 
-    const days2_status = document.querySelector('#days2_status')
+    document.querySelector('#days2_status').innerHTML = data.weather[0].main
     document.querySelector('#days2_temp').innerHTML = Math.round(data.main.temp) + '°';
     document.querySelector('#days2_location').innerHTML = data.name
     document.querySelector('#days2_timezone').innerHTML = formatTimezone(data.timezone);
@@ -88,50 +105,45 @@ export async function getWeather(city) {
 
 
     if (data.weather[0].main == 'Clouds') {
-      weatherIcon.src = './src/assets/weather_status/weather_clouds.svg'
+      weatherIcon.src = weatherClouds
       weatherBg.src = wbgClouds
       body.style.backgroundColor = '#c6d7de';
-      days1_status.src = './src/assets/days_status/days_clouds.svg'
-      days2_status.src = './src/assets/days_status/days_clouds.svg'
-      days3_status.src = './src/assets/days_status/days_clouds.svg'
-      days4_status.src = './src/assets/weather_status/weather_clouds.svg'
+      days1_status.src = dayClouds
+      days3_status.src = dayClouds
+      days4_status.src = weatherClouds
 
     } else if (data.weather[0].main == 'Clear') {
-      weatherIcon.src = './src/assets/weather_status/weather_sunny.svg'
+      weatherIcon.src = weatherClear
       weatherBg.src = wbgClear
       body.style.backgroundColor = '#e7dbb7';
-      days1_status.src = './src/assets/days_status/days_sunny.svg'
-      days2_status.src = './src/assets/days_status/days_sunny.svg'
-      days3_status.src = './src/assets/days_status/days_sunny.svg'
-      days4_status.src = './src/assets/weather_status/weather_sunny.svg'
+      days1_status.src = dayClear
+      days3_status.src = dayClear
+      days4_status.src = weatherClear
 
 
     } else if (data.weather[0].main == 'Rain') {
-      weatherIcon.src = './src/assets/weather_status/weather_rain.svg'
+      weatherIcon.src = weatherRain
       weatherBg.src = wbgRain
       body.style.backgroundColor = '#bdcfde';
-      days1_status.src = './src/assets/days_status/days_rain.svg'
-      days2_status.src = './src/assets/days_status/days_rain.svg'
-      days3_status.src = './src/assets/days_status/days_rain.svg'
-      days4_status.src = './src/assets/weather_status/weather_rain.svg'
+      days1_status.src = dayRain
+      days3_status.src = dayRain
+      days4_status.src = weatherRain
 
     } else if (data.weather[0].main == 'Drizzle') {
-      weatherIcon.src = './src/assets/weather_status/weather_drizzle.svg'
+      weatherIcon.src =  weatherDrizzle
       weatherBg.src = wbgdrizzle
       body.style.backgroundColor = '#cdd1d4';
-      days1_status.src = './src/assets/days_status/days_drizzle.svg'
-      days2_status.src = './src/assets/days_status/days_drizzle.svg'
-      days3_status.src = './src/assets/days_status/days_drizzle.svg'
-      days4_status.src = './src/assets/weather_status/weather_drizzle.svg'
+      days1_status.src = dayDrizzle
+      days3_status.src = dayDrizzle
+      days4_status.src = weatherDrizzle
 
     } else if (data.weather[0].main == 'Mist') {
-      weatherIcon.src = './src/assets/weather_status/weather_mist.svg'
+      weatherIcon.src = weatherMist
       weatherBg.src = wbgMist
       body.style.backgroundColor = '#e4e4e9';
-      days1_status.src = './src/assets/days_status/days_mist.svg'
-      days2_status.src = './src/assets/days_status/days_mist.svg'
-      days3_status.src = './src/assets/days_status/days_mist.svg'
-      days4_status.src = './src/assets/weather_status/weather_mist.svg'
+      days1_status.src = dayMist
+      days3_status.src = dayMist
+      days4_status.src = weatherMist
     }
 
     document.querySelector('#hideBody').classList.remove('hidden')
