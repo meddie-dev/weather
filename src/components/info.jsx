@@ -1,3 +1,13 @@
+import React from 'react'
+import Humidity from '../assets/info_status/humidity.svg'
+import WindSpeed from '../assets/info_status/wind_speed.svg'
+import MaxTemp from '../assets/info_status/temp_max.svg'
+import MinTemp from '../assets/info_status/temp_min.svg'
+import Lat from '../assets/info_status/lat.svg'
+import Lon from '../assets/info_status/lon.svg'
+import Pressure from '../assets/info_status/pres.svg'
+
+
 export default function Info() {
     return (
         <>
@@ -8,7 +18,7 @@ export default function Info() {
                     <div className="flex flex-col gap-3 max-lg:flex-row max-md:justify-evenly max-lg:justify-between  max-lg:w-full max-sm:w-full">
 
                         <div className="flex items-center gap-3 max-md:flex-col ">
-                            <img className='w-[3rem]' src="./src/assets/info_status/humidity.svg" />
+                            <img className='w-[3rem]' src={Humidity} />
                             <div className="text-left max-md:text-center">
                                 <h4 className="text-sm font-semibold max-sm:hidden ">Humidity</h4>
                                 <p id="weather_humidity">weather_humidity</p>
@@ -16,7 +26,7 @@ export default function Info() {
                         </div>
 
                         <div className="flex items-center gap-3 max-md:flex-col">
-                            <img className='w-[3rem]' src="./src/assets/info_status/wind_speed.svg" />
+                            <img className='w-[3rem]' src={WindSpeed} />
                             <div className="text-left max-md:text-center">
                                 <h4 className="text-sm font-semibold max-sm:hidden">Wind Speed</h4>
                                 <p id="weather_Wspeed">weather_Wspeed</p>
@@ -30,7 +40,7 @@ export default function Info() {
                     <div className="flex flex-col gap-3 max-xl:mt-2 max-lg:mt-0 max-md:justify-evenly max-sm:mt-0 max-lg:flex-row  max-lg:justify-between  max-lg:w-full">
 
                         <div className="flex items-center gap-3 max-md:flex-col">
-                            <img className='w-[3rem]' src="./src/assets/info_status/temp_min.svg" />
+                            <img className='w-[3rem]' src={MinTemp} />
                             <div className="text-left max-md:text-center">
                                 <h4 className="text-sm font-semibold max-sm:hidden">Temp Min</h4>
                                 <p id="weather_Tmin">weather_Tmin</p>
@@ -38,7 +48,7 @@ export default function Info() {
                         </div>
 
                         <div className="flex items-center gap-3 max-md:flex-col">
-                            <img className='w-[3rem]' src="./src/assets/info_status/temp_max.svg" />
+                            <img className='w-[3rem]' src={MaxTemp} />
                             <div className="text-left max-md:text-center">
                                 <h4 className="text-sm font-semibold max-sm:hidden">Temp Max</h4>
                                 <p id="weather_Tmax">weather_Tmax</p>
@@ -53,7 +63,7 @@ export default function Info() {
                 <div className="flex row-span-1 border-2 border-gray-400 rounded-xl p-3 w-full justify-evenly items-center gap-4 max-sm:justify-evenly max-lg:flex-row max-xl:flex-col max-xl:items-start">
 
                     <div className="flex flex-col items-center gap-3 max-sm:flex-col max-md:flex-col max-xl:flex-row">
-                        <img className='w-[3rem]' src="./src/assets/info_status/lat.svg" />
+                        <img className='w-[3rem]' src={Lat} />
                         <div className="text-center">
                             <h4 className="text-sm font-semibold max-sm:hidden ">Latitude</h4>
                             <p id="weather_lat">weather_lat</p>
@@ -61,7 +71,7 @@ export default function Info() {
                     </div>
 
                     <div className="flex flex-col items-center gap-3 max-sm:flex-col max-md:flex-col max-xl:flex-row">
-                        <img className='w-[3rem]' src="./src/assets/info_status/lon.svg" />
+                        <img className='w-[3rem]' src={Lon} />
                         <div className="text-center">
                             <h4 className="text-sm font-semibold max-sm:hidden ">Longitude</h4>
                             <p id="weather_lon">weather_lon</p>
@@ -69,7 +79,7 @@ export default function Info() {
                     </div>
 
                     <div className="flex flex-col items-center gap-3 max-sm:flex-col max-md:flex-col max-xl:flex-row">
-                        <img className='w-[3rem]' src="./src/assets/info_status/pres.svg" />
+                        <img className='w-[3rem]' src={Pressure} />
                         <div className="text-center">
                             <h4 className="text-sm font-semibold max-sm:hidden ">Pressure</h4>
                             <p id="weather_pre">weather_pre</p>
