@@ -1,6 +1,8 @@
-
+import React from 'react'
+import Cloud from '../assets/clouds.svg'
 import { getWeather } from '../index.js'
 import { useRef } from 'react'
+
 
 export default function Navigation() {
     const myRef = useRef(null);
@@ -14,7 +16,7 @@ export default function Navigation() {
                     </div>
 
                     <div className='flex mx-auto my-3 xl:hidden '>
-                        <img src="./src/assets/cloud.svg " alt="cloud" className='w-10' />
+                        <img src={Cloud} alt="cloud" className='w-10' />
                     </div>
 
                     <div className='flex items-center gap-2 bg-white px-4 rounded-lg border-2 max-xl:w-full max-md:gap-0 max-md:px-2'>

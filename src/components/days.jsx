@@ -1,3 +1,5 @@
+import React from 'react'
+import Cloud from '../assets/clouds.svg'
 export default function Days() {
     return (
         <>
@@ -77,7 +79,7 @@ export default function Days() {
 
                     <div className="flex justify-evenly items-center mx-auto ">
                         <div className="h-[1px] w-[40%] border-2 border-gray-400 opacity-15"></div>
-                        <img src="./src/assets/cloud.svg " alt="cloud" className='w-10' />
+                        <img src={Cloud} alt="cloud" className='w-10' />
                         <div className="h-[1px] w-[40%] border-2 border-gray-400 opacity-15"></div>
                     </div>
 
