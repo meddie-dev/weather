@@ -5,11 +5,11 @@ const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const apiFore = 'api.openweathermap.org/data/2.5/forecast?lat=';
 
 // Imgages for weatherBg
-const wbgClouds ='./src/assets/weather_bg/wbg_clouds.jpg'
-const wbgRain ='./src/assets/weather_bg/wbg_rain.avif'
-const wbgClear ='./src/assets/weather_bg/wbg_sunny.jpg'
-const wbgdrizzle ='./src/assets/info_status/drizzle.svg'
-const wbgMist ='./src/assets/info_status/mist.svg'
+import wbgClouds from '../src/assets/weather_bg/wbg_clouds.jpg'
+import wbgRain from '../src/assets/weather_bg/wbg_rain.avif'
+import wbgClear from '../src/assets/weather_bg/wbg_sunny.jpg'
+import wbgdrizzle from '../src/assets/weather_bg/wbg_drizzle.avif'
+import wbgMist from '../src/assets/weather_bg/wbg_mist.avif'
 
 
 function formatTimezone(offset) {
