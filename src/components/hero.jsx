@@ -24,7 +24,7 @@ export default function Hero() {
                     <p id="weather_time">weather_time</p>
                 </div>
                 <div>
-                    <img className="w-full h-full absolute z-0 top-0 left-0 opacity-30 brightness-75 object-cover object-center" id="weather_bg" src={wbgClouds} alt="" />
+                    <img className="w-full h-full absolute z-0 top-0 left-0 opacity-30 brightness-75 object-cover object-center" id="weather_bg" src="./src/assets/weather_bg/wbg_clouds.jpg" alt="" />
                 </div>
             </div>
             

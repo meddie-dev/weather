@@ -1,8 +1,15 @@
-import wbgClouds from './assets/weather_bg/wbg_clouds.jpg'
+
 
 const apiKey = 'd7fc45f4b3c1ebdd5ada6afd67936c4f'
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const apiFore = 'api.openweathermap.org/data/2.5/forecast?lat=';
+
+// Imgages for weatherBg
+const wbgClouds ='./src/assets/weather_bg/wbg_clouds.jpg'
+const wbgRain ='./src/assets/weather_bg/wbg_rain.avif'
+const wbgClear ='./src/assets/weather_bg/wbg_sunny.jpg'
+const wbgdrizzle ='./src/assets/info_status/drizzle.svg'
+const wbgMist ='./src/assets/info_status/mist.svg'
 
 
 function formatTimezone(offset) {
@@ -82,7 +89,7 @@ export async function getWeather(city) {
 
     if (data.weather[0].main == 'Clouds') {
       weatherIcon.src = './src/assets/weather_status/weather_clouds.svg'
-      weatherBg.src = {wbgClouds}
+      weatherBg.src = wbgClouds
       body.style.backgroundColor = '#c6d7de';
       days1_status.src = './src/assets/days_status/days_clouds.svg'
       days2_status.src = './src/assets/days_status/days_clouds.svg'
@@ -91,7 +98,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Clear') {
       weatherIcon.src = './src/assets/weather_status/weather_sunny.svg'
-      weatherBg.src = './src/assets/weather_bg/wbg_sunny.jpg'
+      weatherBg.src = wbgClear
       body.style.backgroundColor = '#e7dbb7';
       days1_status.src = './src/assets/days_status/days_sunny.svg'
       days2_status.src = './src/assets/days_status/days_sunny.svg'
@@ -101,7 +108,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Rain') {
       weatherIcon.src = './src/assets/weather_status/weather_rain.svg'
-      weatherBg.src = './src/assets/weather_bg/wbg_rain.avif'
+      weatherBg.src = wbgRain
       body.style.backgroundColor = '#bdcfde';
       days1_status.src = './src/assets/days_status/days_rain.svg'
       days2_status.src = './src/assets/days_status/days_rain.svg'
@@ -110,7 +117,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Drizzle') {
       weatherIcon.src = './src/assets/weather_status/weather_drizzle.svg'
-      weatherBg.src = './src/assets/weather_bg/wbg_drizzle.avif'
+      weatherBg.src = wbgdrizzle
       body.style.backgroundColor = '#cdd1d4';
       days1_status.src = './src/assets/days_status/days_drizzle.svg'
       days2_status.src = './src/assets/days_status/days_drizzle.svg'
@@ -119,7 +126,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Mist') {
       weatherIcon.src = './src/assets/weather_status/weather_mist.svg'
-      weatherBg.src = './src/assets/weather_bg/wbg_mist.avif'
+      weatherBg.src = wbgMist
       body.style.backgroundColor = '#e4e4e9';
       days1_status.src = './src/assets/days_status/days_mist.svg'
       days2_status.src = './src/assets/days_status/days_mist.svg'
@@ -129,15 +136,5 @@ export async function getWeather(city) {
 
     document.querySelector('#hideBody').classList.remove('hidden')
   }
-
-}
-
-export async function getForecast(lat, lot) {
-  const response = await fetch(apiFore + lat + `&lon=` + lot + `&appid=${apiKey}&units=metric`);
-  var forecast = await response.json();
-  console.log(forecast);
-
-  // Days section
-  document.querySelector('#days_1').innerHTML = Math.round(forecast.list[1].main.temp) + '°';
 
 }
