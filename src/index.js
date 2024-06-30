@@ -2,7 +2,7 @@
 
 const apiKey = 'd7fc45f4b3c1ebdd5ada6afd67936c4f'
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
-const apiFore = 'api.openweathermap.org/data/2.5/forecast?lat=';
+
 
 // Imgages for weatherStatus
 import weatherClouds from '../src/assets/weather_status/weather_clouds.svg'
@@ -44,6 +44,7 @@ function formatUnixTimestamp(timestamp, timezoneOffset) {
 export async function getWeather(city) {
   const weatherIcon = document.querySelector('#weather_status');
   const weatherBg = document.querySelector('#weather_bg');
+  const daysBg = document.querySelector('#days_bg');
   const body = document.querySelector('body');
 
   if (city === '') {
@@ -107,6 +108,7 @@ export async function getWeather(city) {
     if (data.weather[0].main == 'Clouds') {
       weatherIcon.src = weatherClouds
       weatherBg.src = wbgClouds
+      daysBg.src = wbgClouds
       body.style.backgroundColor = '#c6d7de';
       days1_status.src = dayClouds
       days3_status.src = dayClouds
@@ -115,6 +117,7 @@ export async function getWeather(city) {
     } else if (data.weather[0].main == 'Clear') {
       weatherIcon.src = weatherClear
       weatherBg.src = wbgClear
+      daysBg.src = wbgClear
       body.style.backgroundColor = '#e7dbb7';
       days1_status.src = dayClear
       days3_status.src = dayClear
@@ -124,6 +127,7 @@ export async function getWeather(city) {
     } else if (data.weather[0].main == 'Rain') {
       weatherIcon.src = weatherRain
       weatherBg.src = wbgRain
+      daysBg.src = wbgRain
       body.style.backgroundColor = '#bdcfde';
       days1_status.src = dayRain
       days3_status.src = dayRain
@@ -132,6 +136,7 @@ export async function getWeather(city) {
     } else if (data.weather[0].main == 'Drizzle') {
       weatherIcon.src =  weatherDrizzle
       weatherBg.src = wbgdrizzle
+      daysBg.src = wbgdrizzle
       body.style.backgroundColor = '#cdd1d4';
       days1_status.src = dayDrizzle
       days3_status.src = dayDrizzle
@@ -140,6 +145,7 @@ export async function getWeather(city) {
     } else if (data.weather[0].main == 'Mist') {
       weatherIcon.src = weatherMist
       weatherBg.src = wbgMist
+      daysBg.src = wbgMist
       body.style.backgroundColor = '#e4e4e9';
       days1_status.src = dayMist
       days3_status.src = dayMist
