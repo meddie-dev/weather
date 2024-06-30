@@ -1,5 +1,5 @@
 import React from 'react'
-import Cloud from '../assets/clouds.svg'
+import Cloud from '../assets/cloud.svg'
 import { getWeather } from '../index.js'
 import { useRef } from 'react'
 
