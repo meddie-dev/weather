@@ -1,5 +1,5 @@
 import Navigation from './components/navigation.jsx'
-import {Hero} from './components/hero.jsx'
+import Hero from './components/hero.jsx'
 import Info from './components/info.jsx'
 import Days from './components/days.jsx'
 function App() {
