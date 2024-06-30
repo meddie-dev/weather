@@ -81,7 +81,7 @@ export async function getWeather(city) {
 
     if (data.weather[0].main == 'Clouds') {
       weatherIcon.src = './src/assets/weather_status/weather_clouds.svg'
-      weatherBg.src = './src/assets/weather_bg/wbg_clouds.jpg'
+      weatherBg.src = {wbgClouds}
       body.style.backgroundColor = '#c6d7de';
       days1_status.src = './src/assets/days_status/days_clouds.svg'
       days2_status.src = './src/assets/days_status/days_clouds.svg'
@@ -90,7 +90,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Clear') {
       weatherIcon.src = './src/assets/weather_status/weather_sunny.svg'
-      weatherBg.src = "{import.meta.env.BASE_URL + './src/assets/weather_bg/wbg_sunny.jpg'}"
+      weatherBg.src = './src/assets/weather_bg/wbg_sunny.jpg'
       body.style.backgroundColor = '#e7dbb7';
       days1_status.src = './src/assets/days_status/days_sunny.svg'
       days2_status.src = './src/assets/days_status/days_sunny.svg'
@@ -100,7 +100,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Rain') {
       weatherIcon.src = './src/assets/weather_status/weather_rain.svg'
-      weatherBg.src = "{import.meta.env.BASE_URL + './src/assets/weather_bg/wbg_rain.jpg'}"
+      weatherBg.src = './src/assets/weather_bg/wbg_rain.avif'
       body.style.backgroundColor = '#bdcfde';
       days1_status.src = './src/assets/days_status/days_rain.svg'
       days2_status.src = './src/assets/days_status/days_rain.svg'
