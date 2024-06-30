@@ -1,3 +1,4 @@
+import wbgClouds from './assets/weather_bg/wbg_clouds.jpg'
 
 const apiKey = 'd7fc45f4b3c1ebdd5ada6afd67936c4f'
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
