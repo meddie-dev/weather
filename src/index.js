@@ -1,4 +1,3 @@
-import hero_bg from '../src/assets/weather_bg/wbg_clouds.jpg'
 
 const apiKey = 'd7fc45f4b3c1ebdd5ada6afd67936c4f'
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=';
@@ -82,7 +81,7 @@ export async function getWeather(city) {
 
     if (data.weather[0].main == 'Clouds') {
       weatherIcon.src = './src/assets/weather_status/weather_clouds.svg'
-      weatherBg.src = {hero_bg}
+      weatherBg.src = './src/assets/weather_bg/wbg_clouds.jpg'
       body.style.backgroundColor = '#c6d7de';
       days1_status.src = './src/assets/days_status/days_clouds.svg'
       days2_status.src = './src/assets/days_status/days_clouds.svg'
@@ -91,7 +90,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Clear') {
       weatherIcon.src = './src/assets/weather_status/weather_sunny.svg'
-      weatherBg.src = './src/assets/weather_bg/wbg_sunny.jpg'
+      weatherBg.src = "{import.meta.env.BASE_URL + './src/assets/weather_bg/wbg_sunny.jpg'}"
       body.style.backgroundColor = '#e7dbb7';
       days1_status.src = './src/assets/days_status/days_sunny.svg'
       days2_status.src = './src/assets/days_status/days_sunny.svg'
@@ -101,7 +100,7 @@ export async function getWeather(city) {
 
     } else if (data.weather[0].main == 'Rain') {
       weatherIcon.src = './src/assets/weather_status/weather_rain.svg'
-      weatherBg.src = './src/assets/weather_bg/wbg_rain.avif'
+      weatherBg.src = "{import.meta.env.BASE_URL + './src/assets/weather_bg/wbg_rain.jpg'}"
       body.style.backgroundColor = '#bdcfde';
       days1_status.src = './src/assets/days_status/days_rain.svg'
       days2_status.src = './src/assets/days_status/days_rain.svg'
