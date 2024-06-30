@@ -1,5 +1,5 @@
 import wbgClouds from '../src/assets/weather_bg/wbg_clouds.jpg'
-export function Hero() {
+export default function Hero() {
   
     return (
         <>
